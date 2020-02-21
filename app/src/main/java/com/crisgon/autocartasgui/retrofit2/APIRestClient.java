@@ -1,4 +1,4 @@
-package com.crisgon.autocartasgui;
+package com.crisgon.autocartasgui.retrofit2;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
