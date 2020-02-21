@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * Created by @cristhian-jg on 17/02/2020.
  */
-public class Jugador {
+public class Jugador implements Serializable {
 
     @SerializedName("nickname")
     @Expose
@@ -19,6 +19,12 @@ public class Jugador {
     @SerializedName("password")
     @Expose
     private String password;
+
+    public Jugador(String nickname, String nombre, String password) {
+        this.nickname = nickname;
+        this.nombre = nombre;
+        this.password = password;
+    }
 
     public String getNickname() {
         return nickname;
