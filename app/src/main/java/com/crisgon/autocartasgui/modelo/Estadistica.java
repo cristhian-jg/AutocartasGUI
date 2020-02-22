@@ -11,15 +11,24 @@ public class Estadistica  {
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("jugador")
     @Expose
     private String jugador;
+
+    @SerializedName("partida")
+    @Expose
+    private Integer partida;
+
+
     @SerializedName("ganadas")
     @Expose
     private Integer ganadas;
+
     @SerializedName("perdidas")
     @Expose
     private Integer perdidas;
+
     @SerializedName("empatadas")
     @Expose
     private Integer empatadas;
@@ -38,6 +47,14 @@ public class Estadistica  {
 
     public void setJugador(String jugador) {
         this.jugador = jugador;
+    }
+
+    public Integer getPartida() {
+        return partida;
+    }
+
+    public void setPartida(Integer partida) {
+        this.partida = partida;
     }
 
     public Integer getGanadas() {
