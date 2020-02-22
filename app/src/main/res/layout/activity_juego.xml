@@ -82,7 +82,7 @@
         android:id="@+id/btnCilindros"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="CILINDROS"
@@ -94,7 +94,7 @@
         android:id="@+id/btnPotencia"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:text="POTENCIA"
@@ -186,17 +186,15 @@
         app:layout_constraintBottom_toTopOf="@+id/rvCartasJugador"
         app:layout_constraintEnd_toStartOf="@+id/imageCPU" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btnLanzar"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:text="VOY A JUGAR A"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:text="LANZAR"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnVelocidad" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
