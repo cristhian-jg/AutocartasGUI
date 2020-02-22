@@ -1,10 +1,12 @@
 package com.crisgon.autocartasgui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,11 +14,11 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.crisgon.autocartasgui.adaptadores.EstadisticasAdapter;
 import com.crisgon.autocartasgui.modelo.Estadistica;
 import com.crisgon.autocartasgui.modelo.Partida;
-import com.crisgon.autocartasgui.modelo.juego.Juego;
 import com.crisgon.autocartasgui.retrofit2.APIService;
 import com.crisgon.autocartasgui.retrofit2.APIUtils;
 
@@ -36,9 +38,14 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private RecyclerView recyclerView;
 
     private Button btnIniciar;
+    private Button btnPreferencias;
+    private Button btnAcercaDe;
+
     private TextView tvIdSession;
 
     private String idSession;
+
+    private int countPreference = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +55,12 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         tvIdSession = findViewById(R.id.tvIdSession);
+
         Bundle extras = getIntent().getExtras();
-        if(extras != null) {
+        if (extras != null) {
             String idSession = extras.getString("idSession"); // retrieve the data using keyName
-            Log.e(TAG, idSession);
-            mostrarIdSession(idSession);
-            asignarIdSession(idSession);
+            setIdSession(idSession);
+            tvIdSession.setText(idSession);
         }
 
         mAPIService = APIUtils.getAPIService();
@@ -62,13 +69,28 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         recyclerView.setHasFixedSize(true);
 
-        tvIdSession = findViewById(R.id.tvIdSession);
-
         btnIniciar = findViewById(R.id.btnIniciar);
+        btnPreferencias = findViewById(R.id.btnPreferencias);
+        btnAcercaDe = findViewById(R.id.btnAcercaDe);
 
         readEstadisticas();
 
         btnIniciar.setOnClickListener(this);
+        btnPreferencias.setOnClickListener(this);
+        btnAcercaDe.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String user = preferences.getString("user-preference", "");
+
+        if (countPreference !=0) {
+            tvIdSession.setText(user);
+        } preferences.edit().clear().commit();
+
+        countPreference++;
     }
 
     public void readEstadisticas() {
@@ -76,7 +98,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<List<Estadistica>> call, Response<List<Estadistica>> response) {
                 Log.i(TAG, "Estadisticas leidas" + response.body().toString());
-                showResponse((ArrayList<Estadistica>) response.body());
+                rellenarRecyclerEstadisticas((ArrayList<Estadistica>) response.body());
             }
 
             @Override
@@ -86,16 +108,12 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    public void showResponse(ArrayList<Estadistica> estadisticas) {
+    public void rellenarRecyclerEstadisticas(ArrayList<Estadistica> estadisticas) {
         recyclerView.setAdapter(new EstadisticasAdapter(estadisticas));
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
     }
 
-    public void mostrarIdSession(String idSession) {
-        tvIdSession.setText(""+idSession);
-    }
-
-    public void asignarIdSession(String idSession) {
+    public void setIdSession(String idSession) {
         this.idSession = idSession;
     }
 
@@ -105,6 +123,12 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnIniciar:
                 sendNuevaPartida(idSession);
                 break;
+            case R.id.btnPreferencias:
+                Intent intent = new Intent(this, PreferencesActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnAcercaDe:
+                Toast.makeText(this, "Esta aplicación ha sido creado por Cristhian González.", Toast.LENGTH_SHORT).show();
             default:
                 break;
         }
@@ -114,8 +138,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         mAPIService.sendNuevaPartida(idSession).enqueue(new Callback<Partida>() {
             @Override
             public void onResponse(Call<Partida> call, Response<Partida> response) {
-
-                Log.i(TAG, "" + response.body());
 
                 if (response.isSuccessful()) {
                     switch (response.code()) {
