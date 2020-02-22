@@ -11,7 +11,7 @@ public class APIUtils {
     private APIUtils() {
     }
 
-    public static final String BASE_URL = "http://192.168.20.45:8080";
+    public static final String BASE_URL = "http://192.168.1.39:8080";
 
     public static APIService getAPIService() {
         return APIRestClient.getInstance(BASE_URL).getRetrofit().create(APIService.class);

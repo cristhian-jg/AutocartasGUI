@@ -29,12 +29,12 @@ public interface APIService {
 
     // - - - - - - - - - - - - - Login y registro - - - - - - - - - - - - - -
 
-    @POST("Autocartas/rest/iniciar/login")
+    @POST("Autocartas/rest/init/login")
     @FormUrlEncoded
     Call<Jugador> loginJugador(@Field("nickname") String nickname,
                                @Field("password") String password);
 
-    @POST("Autocartas/rest/iniciar/register")
+    @POST("Autocartas/rest/init/register")
     @FormUrlEncoded
     Call<Jugador> registerJugador(@Field("nickname") String nickname,
                                   @Field("nombre") String nombre,
@@ -42,30 +42,41 @@ public interface APIService {
 
     // - - - - - - - - - - - - - - - PARTIDA - - - - - - - - - - - - - - - - -
 
-    @POST("Autocartas/rest/iniciar/nuevapartida")
+    @POST("Autocartas/rest/init/newgame")
     @FormUrlEncoded
     Call<Partida> sendNuevaPartida(@Field("idSession") String idSession);
 
-    @POST("Autocartas/rest/iniciar/reset")
+    @POST("Autocartas/rest/init/reset")
     @FormUrlEncoded
     Call<Partida> sendResetPartida(@Field("idSession") String idSession, @Field("idGame") int idGame);
 
-    @GET("Autocartas/rest/iniciar/raffle")
-    Call<Juego> readRaffle(@Query("idSession") String idSession,
-                           @Query("idGame") int idGame);
+    @POST("Autocartas/rest/init/raffle")
+    @FormUrlEncoded
+    Call<Juego> sendRaffle(@Field("idSession") String idSession,
+                           @Field("idGame") int idGame);
 
-    @POST("Autocartas/rest/iniciar/playcard")
+    @POST("Autocartas/rest/init/playcard")
     @FormUrlEncoded
     Call<Jugada> sendJugada(@Field("idSession") String idSession,
                             @Field("idGame") int idGame,
-                            @Field("idCard") int idCard,
+                            @Field("idCard") String idCard,
                             @Field("feautre") Caracteristica feature,
                             @Field("hand") int hand);
 
-    @POST("Autocartas/rest/iniciar/ready")
+    @POST("Autocartas/rest/init/ready")
     @FormUrlEncoded
     Call<Jugada> sendReady(@Field("idSession") String idSession,
-                           @Field("idGame") int idGame);
+                           @Field("idGame") int idGame,
+                           @Field("feature") Caracteristica caracteristica,
+                           @Field("hand") int hand);
+
+    @POST("Autocartas/rest/init/sendCheck")
+    @FormUrlEncoded
+    Call<Carta> sendCheck(@Field("idGame") int idGame,
+                          @Field("idSession") String idSession,
+                          @Field("idCartaJugador") String idCartaJugador,
+                          @Field("idCartaCPU") String idCartaCPU,
+                          @Field("feature") Caracteristica feature);
 
     // - - - - - - - - - - - - GET, POST, PUT, DELETE de Cartas. - - - - - - - - - - - -
 
@@ -121,7 +132,7 @@ public interface APIService {
 
     // - - - - - - - - - - - - GET, POST, PUT, DELETE de Estadisticas. - - - - - - - - - - - -
 
-    @GET("Autocartas/rest/estadisticas/gestats")
+    @GET("Autocartas/rest/estadisticas/getstats")
     Call<List<Estadistica>> readEstadisticas();
 
     // TODO FALTA METODO GET UNA ESTADISTICA
