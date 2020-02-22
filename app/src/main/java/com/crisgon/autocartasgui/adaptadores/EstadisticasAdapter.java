@@ -44,16 +44,31 @@ public class EstadisticasAdapter extends RecyclerView.Adapter<EstadisticasAdapte
 
     public class EstadisticasViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvEstadistica;
+        private TextView tvIdEstadistica;
+        private TextView tvJugador;
+        private TextView tvPartida;
+        private TextView tvGanadas;
+        private TextView tvPerdidas;
+        private TextView tvEmpatadas;
 
         public EstadisticasViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvEstadistica = itemView.findViewById(R.id.tvEstadistica);
+            tvIdEstadistica = itemView.findViewById(R.id.tvIdEstadistica);
+            tvJugador = itemView.findViewById(R.id.tvJugadorEstadistica);
+            tvPartida = itemView.findViewById(R.id.tvPartidaEstadistica);
+            tvGanadas = itemView.findViewById(R.id.tvGanadasEstadistica);
+            tvPerdidas = itemView.findViewById(R.id.tvPerdidasEstadistica);
+            tvEmpatadas  = itemView.findViewById(R.id.tvEmpatadasEstadistica);
         }
 
         public void bindEstadistica(Estadistica estadistica) {
-            tvEstadistica.setText(estadistica.getJugador());
+            tvIdEstadistica.setText(String.valueOf(estadistica.getId()));
+            tvJugador.setText(estadistica.getJugador());
+            tvPartida.setText(String.valueOf(estadistica.getPartida()));
+            tvGanadas.setText(String.valueOf(estadistica.getGanadas()));
+            tvPerdidas.setText(String.valueOf(estadistica.getPerdidas()));
+            tvEmpatadas.setText(String.valueOf(estadistica.getEmpatadas()));
         }
     }
 }

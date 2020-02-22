@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.crisgon.autocartasgui.administrador.AdminActivity;
 import com.crisgon.autocartasgui.modelo.Jugador;
 import com.crisgon.autocartasgui.retrofit2.APIService;
 import com.crisgon.autocartasgui.retrofit2.APIUtils;
@@ -59,7 +60,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Log.i(TAG, "Login in was pressed");
                 String nickname = etUsuario.getText().toString();
                 String password = etContrasenya.getText().toString();
-                sendLogin(nickname, password);
+
+                if (nickname.equals("admin") && password.equals("admin")) {
+                    Intent intent = new Intent(this, AdminActivity.class);
+                    startActivity(intent);
+                } else {
+                    sendLogin(nickname, password);
+
+                }
                 break;
             case R.id.btnCrearCuenta:
                 Log.i(TAG, "Create account was pressed");

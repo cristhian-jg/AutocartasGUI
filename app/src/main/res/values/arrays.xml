@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="niveles">
+        <item>FACIL</item>
+        <item>NORMAL</item>
+        <item>DIFICIL</item>
+    </string-array>
+</resources>

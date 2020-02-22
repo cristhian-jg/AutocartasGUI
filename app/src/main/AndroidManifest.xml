@@ -12,10 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".JuegoActivity" android:screenOrientation="landscape"></activity>
-        <activity android:name=".RegisterActivity" android:screenOrientation="landscape"/>
-        <activity android:name=".MenuActivity" android:screenOrientation="landscape"/>
-        <activity android:name=".LoginActivity" android:screenOrientation="landscape">
+        <activity android:name=".administrador.GestorCartasActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".administrador.AdminActivity"  android:screenOrientation="landscape"/>
+        <activity
+            android:name=".PreferencesActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".JuegoActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RegisterActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MenuActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

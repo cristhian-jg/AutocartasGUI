@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Datos de conexión" />
+    <EditTextPreference
+        android:dialogTitle="Introduce tu usuario"
+        android:key="user-preference"
+        android:summary="Indica tu usuario"
+        android:title="Usuario" />
+    <EditTextPreference
+        android:dialogTitle="Introduce tu contraseña"
+        android:key="password-preference"
+        android:summary="Indica tu contraseña"
+        android:title="Contraseña" />
+
+    <PreferenceCategory android:title="Notificaciones" />
+    <SwitchPreference
+        android:key="notifications-preference"
+        android:summary="Recibe notificaciones acerca de los retos diarios"
+        android:title="Activar notificaciones" />
+
+    <SwitchPreference
+        android:key="bots-preference"
+        android:summary="Habilita el bot para que juegue por ti"
+        android:title="Bot automatico" />
+
+    <PreferenceCategory android:title="Sonido" />
+    <CheckBoxPreference android:title="Habilitar el sonido"
+        android:key="sound-preference"/>
+    <ListPreference
+        android:key="level-preference"
+        android:entries="@array/niveles"
+        android:entryValues="@array/niveles"
+        android:title="Nivel de dificultad" />
+
+</PreferenceScreen>

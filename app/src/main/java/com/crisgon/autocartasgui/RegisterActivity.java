@@ -70,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     Log.i(TAG, "Post enviado al API." + response.body().toString());
                     Toast.makeText(RegisterActivity.this, "Se ha registrado correctamente.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getBaseContext(), MenuActivity.class);
+                    intent.putExtra("idSession", response.body().getNickname());
                     startActivity(intent);
                 } else {
                     switch (response.code()) {
