@@ -1,11 +1,5 @@
 # AUTOCARTAS: Manual de usuario
 
-## INDEX
-
-## 1. REGLAS Y FUNCIONAMIENTO
-
-## 2. USO DE LA APLICACIÓN
-
 ![Autocartas](https://www.nostalgia80.com/wp-content/uploads/2016/03/baraja-de-cartas-de-coches-de-carreras.jpg)
 
 ### 1. REGLAS Y FUNCIONAMIENTO
@@ -84,9 +78,3 @@ Cuando hayas seleccionado tanto la carta como la caracteristica deberías asegur
 Si ahora es el turno de la CPU esta deberá seleccionar la caracteristica, por lo que no tendrás acceso a los botones más que al de lanzar. Ahora solo tendrás que eleigr bien tu carta según la caracteristica que haya elegido la CPU, esto se verá representado entre los botones de caracteristicas y el botón lanzar.
 
 Cada vez que juegues una carta se te retirará de tu baraja hasta llegar a las 6 manos donde ya no te quedará ninguna carta, podrás ver el resultado que llevas durante cada mano en la pantalla de juego pero una vez hayas terminado de jugar se te llevará nuevamente al menú de inicio donde verás las caracteristicas de la partida que has jugado. 
-
-
-
-
-
-
