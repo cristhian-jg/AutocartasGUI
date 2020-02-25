@@ -1,6 +1,14 @@
 # AUTOCARTAS: Manual de usuario
 
-### 1. INTRODUCCIÓN
+## INDEX
+
+## 1. REGLAS Y FUNCIONAMIENTO
+
+## 2. USO DE LA APLICACIÓN
+
+![Autocartas](https://www.nostalgia80.com/wp-content/uploads/2016/03/baraja-de-cartas-de-coches-de-carreras.jpg)
+
+### 1. REGLAS Y FUNCIONAMIENTO
 
 En este documento se explicará de forma detallada cómo utilizar e instalar la aplicación Autocartas, un juego de cartas en el que se compite contra la CPU haciendo uso de especificaciones de coches.
 
