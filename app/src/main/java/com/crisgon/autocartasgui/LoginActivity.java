@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String nickname = etUsuario.getText().toString();
                 String password = etContrasenya.getText().toString();
 
+                // Lleva a la actividad de administracion
                 if (nickname.equals("admin") && password.equals("admin")) {
                     Intent intent = new Intent(this, AdminActivity.class);
                     startActivity(intent);
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.btnCrearCuenta:
                 Log.i(TAG, "Create account was pressed");
+                // Lleva a la actividad de registro
                 Intent intent = new Intent(this, RegisterActivity.class);
                 startActivity(intent);
                 break;
@@ -81,6 +83,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    /**
+     * Comprueba que el usuario y la contraseña introducidos es correcta.
+     * @param nickname
+     * @param password
+     */
     public void sendLogin(String nickname, String password) {
         mAPIService.loginJugador(nickname, password).enqueue(new Callback<Jugador>() {
             @Override

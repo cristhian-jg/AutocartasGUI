@@ -10,6 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.crisgon.autocartasgui.R;
 
 
+/**
+ * Actividad en la que se pueden realizar aplicaciones CRUD.
+ * Actualmente no terminada, pero implementada la gestión de cartas.
+ *
+ */
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener {
 
 
