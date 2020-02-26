@@ -19,18 +19,18 @@
         android:summary="Recibe notificaciones acerca de los retos diarios"
         android:title="Activar notificaciones" />
 
-    <SwitchPreference
-        android:key="bots-preference"
-        android:summary="Habilita el bot para que juegue por ti"
-        android:title="Bot automatico" />
-
     <PreferenceCategory android:title="Sonido" />
     <CheckBoxPreference android:title="Habilitar el sonido"
         android:key="sound-preference"/>
+    <PreferenceCategory android:title="Juego" />
     <ListPreference
         android:key="level-preference"
         android:entries="@array/niveles"
         android:entryValues="@array/niveles"
         android:title="Nivel de dificultad" />
+    <SwitchPreference
+        android:key="bots-preference"
+        android:summary="Habilita el bot para que juegue por ti"
+        android:title="Bot automatico" />
 
 </PreferenceScreen>
