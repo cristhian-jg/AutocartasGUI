@@ -56,6 +56,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         tvIdSession = findViewById(R.id.tvIdSession);
 
+        //Obtengo la id que se proporciono anteriormente
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String idSession = extras.getString("idSession"); // retrieve the data using keyName
@@ -73,6 +74,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         btnPreferencias = findViewById(R.id.btnPreferencias);
         btnAcercaDe = findViewById(R.id.btnAcercaDe);
 
+        // Lee las estadisticas actuales de la base de datos
         readEstadisticas();
 
         btnIniciar.setOnClickListener(this);
@@ -83,6 +85,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
+
+        //Se actualizan las preferencias
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String user = preferences.getString("user-preference", "");
 
@@ -93,6 +97,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         countPreference++;
     }
 
+    /**
+     * Obtiene las estadisitcas de la base de datos.
+     */
     public void readEstadisticas() {
         mAPIService.readEstadisticas().enqueue(new Callback<List<Estadistica>>() {
             @Override
@@ -108,6 +115,10 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    /**
+     * Rellena el recyclerview de estadisticas con el array recibido
+     * @param estadisticas
+     */
     public void rellenarRecyclerEstadisticas(ArrayList<Estadistica> estadisticas) {
         recyclerView.setAdapter(new EstadisticasAdapter(estadisticas));
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -134,6 +145,10 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * Crea una nueva partida.
+     * @param idSession
+     */
     public void sendNuevaPartida(String idSession) {
         mAPIService.sendNuevaPartida(idSession).enqueue(new Callback<Partida>() {
             @Override
@@ -141,11 +156,15 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (response.isSuccessful()) {
                     switch (response.code()) {
+                        // Si la respuesta es 202 significa que el jugador tiene una partida no terminada
+                        //por lo que hay que resetearla.
                         case 202:
                             String idSession = response.body().getJugador();
                             int idGame = response.body().getId();
                             sendResetPartida(idSession, idGame);
                             break;
+                            // Si la respuesta es 200 significa que el jugador no tiene ninguna partida sin
+                            // terminar y puede empezar una nueva
                         case 200:
                             Partida partida = response.body();
                             Intent intent = new Intent(getBaseContext(), JuegoActivity.class);
@@ -165,6 +184,11 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    /**
+     * Hace una llamada al endpoint de resetear partida y la termina, este vuelve a ejecutar sendNuevaPartida.
+     * @param idSession
+     * @param idGame
+     */
     public void sendResetPartida(String idSession, int idGame) {
         mAPIService.sendResetPartida(idSession, idGame).enqueue(new Callback<Partida>() {
             @Override

@@ -1,19 +1,28 @@
 package com.crisgon.autocartasgui.modelo.juego;
 
-import com.crisgon.autocartasgui.Caracteristica;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by @cristhian-jg on 21/02/2020.
+ * Clase que utilizo para empaquetar la información de la jugada que hace el
+ * jugador o la CPU.
+ *
+ * Created by @cristhian-jg on 25/02/2020.
  */
 public class Jugada {
 
+    @Expose
     private String idSession;
+    @Expose
     private int idGame;
+    @Expose
     private String idCard;
-    private Caracteristica feature;
+    @Expose
+    private String feature;
+    @Expose
     private int hand;
 
-    public Jugada(String idSession, int idGame, String idCard, Caracteristica feature, int hand) {
+    public Jugada(String idSession, int idGame, String idCard, String feature, int hand) {
         this.idSession = idSession;
         this.idGame = idGame;
         this.idCard = idCard;
@@ -25,36 +34,36 @@ public class Jugada {
         return idSession;
     }
 
-    public void setIdSession(String idSession) {
-        this.idSession = idSession;
-    }
-
     public int getIdGame() {
         return idGame;
-    }
-
-    public void setIdGame(int idGame) {
-        this.idGame = idGame;
     }
 
     public String getIdCard() {
         return idCard;
     }
 
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
-    }
-
-    public Caracteristica getFeature() {
+    public String getFeature() {
         return feature;
-    }
-
-    public void setFeature(Caracteristica feature) {
-        this.feature = feature;
     }
 
     public int getHand() {
         return hand;
+    }
+
+    public void setIdSession(String idSession) {
+        this.idSession = idSession;
+    }
+
+    public void setIdGame(int idGame) {
+        this.idGame = idGame;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public void setFeature(String feature) {
+        this.feature = feature;
     }
 
     public void setHand(int hand) {
@@ -63,7 +72,12 @@ public class Jugada {
 
     @Override
     public String toString() {
-        return "Jugada [idSession=" + idSession + ", idGame=" + idGame + ", idCard=" + idCard + ", feature=" + feature
-                + ", hand=" + hand + "]";
+        return "Jugada{" +
+                "idSession='" + idSession + '\'' +
+                ", idGame=" + idGame +
+                ", idCard='" + idCard + '\'' +
+                ", feature='" + feature + '\'' +
+                ", hand=" + hand +
+                '}';
     }
 }

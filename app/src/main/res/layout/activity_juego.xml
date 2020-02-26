@@ -6,6 +6,174 @@
     android:layout_height="match_parent"
     tools:context=".JuegoActivity">
 
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="VELOCIDAD"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView46"
+        app:layout_constraintEnd_toStartOf="@+id/tvVelocidadCartaSeleccionadaCPU" />
+
+    <TextView
+        android:id="@+id/tvVelocidadCartaSeleccionadaCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCilindrosCartaSeleccionadaCPU"
+        app:layout_constraintEnd_toStartOf="@+id/btnRPM" />
+
+    <TextView
+        android:id="@+id/tvPotenciaCartaSeleccionadaCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginBottom="12dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvVelocidadCartaSeleccionadaCPU"
+        app:layout_constraintEnd_toStartOf="@+id/btnRPM" />
+
+    <TextView
+        android:id="@+id/tvRevolucionesCartaSeleccionadaCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvConsumoCartaSeleccionadaCPU"
+        app:layout_constraintEnd_toStartOf="@+id/btnMotor" />
+
+    <TextView
+        android:id="@+id/tvIdCartaSeleccionadaCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="4dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvMotorCartaSeleccionadaCPU"
+        app:layout_constraintEnd_toStartOf="@+id/btnPotencia" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="8dp"
+        android:text="POTENCIA"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView47"
+        app:layout_constraintEnd_toStartOf="@+id/tvPotenciaCartaSeleccionadaCPU" />
+
+    <TextView
+        android:id="@+id/tvCilindrosCartaSeleccionadaCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvRevolucionesCartaSeleccionadaCPU"
+        app:layout_constraintEnd_toStartOf="@+id/btnMotor" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="CILINDROS"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView45"
+        app:layout_constraintEnd_toStartOf="@+id/tvCilindrosCartaSeleccionadaCPU" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="8dp"
+        android:text="MOTOR"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView49"
+        app:layout_constraintEnd_toStartOf="@+id/tvMotorCartaSeleccionadaCPU" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginBottom="8dp"
+        android:text="ID"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView48"
+        app:layout_constraintEnd_toStartOf="@+id/tvIdCartaSeleccionadaCPU" />
+
+    <TextView
+        android:id="@+id/tvMotorCartaSeleccionadaCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPotenciaCartaSeleccionadaCPU"
+        app:layout_constraintEnd_toStartOf="@+id/btnRPM" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="66dp"
+        android:text="CONSUMO"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/rvCartasJugador"
+        app:layout_constraintEnd_toStartOf="@+id/tvConsumoCartaSeleccionadaCPU" />
+
+    <TextView
+        android:id="@+id/tvConsumoCartaSeleccionadaCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="66dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/rvCartasJugador"
+        app:layout_constraintEnd_toStartOf="@+id/btnMotor" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="8dp"
+        android:text="RPM"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView44"
+        app:layout_constraintEnd_toStartOf="@+id/tvRevolucionesCartaSeleccionadaCPU" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCartasJugador"
         android:layout_width="650dp"
@@ -17,26 +185,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageJugador"
-        android:layout_width="146dp"
-        android:layout_height="194dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNicknameJugador"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <ImageView
-        android:id="@+id/imageCPU"
-        android:layout_width="154dp"
-        android:layout_height="195dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnRPM"
-        app:layout_constraintTop_toBottomOf="@+id/tvCPU"
-        app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/tvVs"
@@ -58,7 +206,7 @@
         android:id="@+id/btnConsumo"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="CONSUMO"
@@ -70,7 +218,7 @@
         android:id="@+id/btnVelocidad"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="VELOCIDAD"
@@ -82,7 +230,7 @@
         android:id="@+id/btnCilindros"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="CILINDROS"
@@ -94,7 +242,7 @@
         android:id="@+id/btnPotencia"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:text="POTENCIA"
@@ -106,7 +254,7 @@
         android:id="@+id/btnRPM"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:text="RPM"
@@ -118,7 +266,7 @@
         android:id="@+id/btnMotor"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:text="MOTOR"
@@ -164,37 +312,248 @@
         android:id="@+id/tvGanadasJugador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
         android:layout_marginBottom="96dp"
         android:text="0"
         android:textColor="#3F51B5"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/rvCartasJugador"
-        app:layout_constraintStart_toEndOf="@+id/imageJugador" />
+        app:layout_constraintStart_toEndOf="@+id/tvCilindrosCartaSeleccionada" />
 
     <TextView
         android:id="@+id/tvGanadasCPU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="179dp"
+        android:layout_marginRight="179dp"
         android:layout_marginBottom="96dp"
         android:text="0"
         android:textColor="#3F51B5"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/rvCartasJugador"
-        app:layout_constraintEnd_toStartOf="@+id/imageCPU" />
+        app:layout_constraintEnd_toStartOf="@+id/btnRPM" />
 
     <Button
         android:id="@+id/btnLanzar"
         android:layout_width="220dp"
         android:layout_height="45dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:text="LANZAR"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVelocidad" />
+        app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:text="Mano"
+        app:layout_constraintEnd_toStartOf="@+id/tvIndicadorMano"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvIndicadorMano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginRight="115dp"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/tvCPU"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="POTENCIA"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView25"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="40dp"
+        android:text="CONSUMO"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="RPM"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView35"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCilindrosCartaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvRevolucionesCartaSeleccionada"
+        app:layout_constraintStart_toEndOf="@+id/textView26" />
+
+    <TextView
+        android:id="@+id/tvRevolucionesCartaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvConsumoCartaSeleccionada"
+        app:layout_constraintStart_toEndOf="@+id/textView34" />
+
+    <TextView
+        android:id="@+id/tvMotorCartaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvPotenciaCartaSeleccionada"
+        app:layout_constraintStart_toEndOf="@+id/textView23" />
+
+    <TextView
+        android:id="@+id/tvIdCartaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginBottom="4dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvMotorCartaSeleccionada"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tvVelocidadCartaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvCilindrosCartaSeleccionada"
+        app:layout_constraintStart_toEndOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/tvConsumoCartaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginBottom="40dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textView35" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="CILINDROS"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView34"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="VELOCIDAD"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="MOTOR"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView24"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPotenciaCartaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="12dp"
+        android:text="0"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvVelocidadCartaSeleccionada"
+        app:layout_constraintStart_toEndOf="@+id/textView24" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="8dp"
+        android:text="ID"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView23"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="4dp"
+        android:text="CARACTERISTICA: "
+        app:layout_constraintStart_toEndOf="@+id/tvConsumoCartaSeleccionadaCPU"
+        app:layout_constraintTop_toBottomOf="@+id/btnMotor" />
+
+    <TextView
+        android:id="@+id/tvCaracteristicaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="172dp"
+        app:layout_constraintStart_toEndOf="@+id/textView54"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

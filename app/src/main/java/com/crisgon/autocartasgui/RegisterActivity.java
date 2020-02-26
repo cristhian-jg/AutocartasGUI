@@ -62,6 +62,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    /**
+     * Registra a un nuevo usuario en la base de datos.
+     * @param nickname
+     * @param nombre
+     * @param password
+     */
     public void sendRegister(String nickname, String nombre, String password) {
         mAPIService.registerJugador(nickname, nombre, password).enqueue(new Callback<Jugador>() {
             @Override

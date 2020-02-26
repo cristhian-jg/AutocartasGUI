@@ -4,6 +4,8 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
+ *  Clase modelo que representa la tabla Estadistica.
+ *
  * Created by @cristhian-jg on 17/02/2020.
  */
 public class Estadistica  {

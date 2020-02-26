@@ -6,6 +6,8 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Arrays;
 
 /**
+ * Clase modelo que representa la tabla de cartas.
+ *
  * Created by @cristhian-jg on 17/02/2020.
  */
 public class Carta {

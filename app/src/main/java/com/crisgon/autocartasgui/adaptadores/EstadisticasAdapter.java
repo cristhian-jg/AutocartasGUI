@@ -14,6 +14,8 @@ import com.crisgon.autocartasgui.modelo.Estadistica;
 import java.util.ArrayList;
 
 /**
+ * Adaptador de las RecyclerView de Estadisticas que define que se muestra en este.
+ *
  * Created by @cristhian-jg on 20/02/2020.
  */
 public class EstadisticasAdapter extends RecyclerView.Adapter<EstadisticasAdapter.EstadisticasViewHolder> {

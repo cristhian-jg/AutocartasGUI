@@ -25,6 +25,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Clase que implementa la gestión CRUD de las cartas.
+ */
 public class GestorCartasActivity extends AppCompatActivity implements View.OnClickListener {
 
     private APIService mAPIService;
@@ -105,6 +108,9 @@ public class GestorCartasActivity extends AppCompatActivity implements View.OnCl
     }
 
 
+    /**
+     * Muestra las cartas que hay en la base de datos mediante Retrofit.
+     */
     private void readCartas() {
         mAPIService.readCartas().enqueue(new Callback<List<Carta>>() {
             @Override
@@ -120,6 +126,18 @@ public class GestorCartasActivity extends AppCompatActivity implements View.OnCl
         });
     }
 
+    /**
+     * Crea una nueva carta en la base de datos mediante retrofit.
+     * @param identificador
+     * @param marca
+     * @param modelo
+     * @param motor
+     * @param potencia
+     * @param velocidad
+     * @param cilindros
+     * @param revoluciones
+     * @param consumo
+     */
     private void sendCarta(String identificador, String marca, String modelo, int motor,
                            int potencia, int velocidad, int cilindros,
                            int revoluciones, double consumo) {
@@ -141,6 +159,10 @@ public class GestorCartasActivity extends AppCompatActivity implements View.OnCl
 
     //private void updateCarta();
 
+    /**
+     * Borra una carta que haya en la base de datos mediante Retrofit.
+     * @param identificador
+     */
     private void deleteCarta(String identificador) {
         mAPIService.deleteCarta(identificador).enqueue(new Callback<Response>() {
             @Override
@@ -157,6 +179,10 @@ public class GestorCartasActivity extends AppCompatActivity implements View.OnCl
         });
     }
 
+    /**
+     * Actualiza el RecyclerView de las cartas.
+     * @param cartas
+     */
     private void rellenarRecylerCartas(ArrayList<Carta> cartas) {
         rvGestorCartas.setAdapter(new CartaAdapter(cartas, new ICartaListener() {
             @Override
