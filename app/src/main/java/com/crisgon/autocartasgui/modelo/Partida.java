@@ -7,6 +7,8 @@ import java.io.Serializable;
 import java.sql.Date;
 
 /**
+ *  Clase modelo que representa la tabla Partida
+ *
  * Created by @cristhian-jg on 17/02/2020.
  */
 public class Partida {

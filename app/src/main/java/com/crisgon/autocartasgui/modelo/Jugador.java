@@ -6,6 +6,8 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 /**
+ * Clase modelo jugador que representa la tabla Jugador.
+ *
  * Created by @cristhian-jg on 17/02/2020.
  */
 public class Jugador implements Serializable {

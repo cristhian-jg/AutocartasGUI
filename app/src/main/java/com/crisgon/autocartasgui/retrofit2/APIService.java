@@ -1,19 +1,18 @@
 package com.crisgon.autocartasgui.retrofit2;
 
-import com.crisgon.autocartasgui.Caracteristica;
 import com.crisgon.autocartasgui.modelo.Carta;
 import com.crisgon.autocartasgui.modelo.Estadistica;
 import com.crisgon.autocartasgui.modelo.Jugador;
 import com.crisgon.autocartasgui.modelo.Partida;
-import com.crisgon.autocartasgui.modelo.juego.Juego;
-import com.crisgon.autocartasgui.modelo.juego.Jugada;
+import com.crisgon.autocartasgui.modelo.juego.CPUSelection;
+import com.crisgon.autocartasgui.modelo.juego.Reparto;
+import com.crisgon.autocartasgui.modelo.juego.HandResult;
 
 import java.sql.Date;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Response;
-import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -23,6 +22,8 @@ import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 /**
+ * Interfaz que define las conexiones con la APIREST.
+ *
  * Created by @cristhian-jg on 18/02/2020.
  */
 public interface APIService {
@@ -52,31 +53,21 @@ public interface APIService {
 
     @POST("Autocartas/rest/init/raffle")
     @FormUrlEncoded
-    Call<Juego> sendRaffle(@Field("idSession") String idSession,
-                           @Field("idGame") int idGame);
+    Call<Reparto> sendRaffle(@Field("idSession") String idSession,
+                             @Field("idGame") int idGame);
 
     @POST("Autocartas/rest/init/playcard")
     @FormUrlEncoded
-    Call<Jugada> sendJugada(@Field("idSession") String idSession,
-                            @Field("idGame") int idGame,
-                            @Field("idCard") String idCard,
-                            @Field("feautre") Caracteristica feature,
-                            @Field("hand") int hand);
+    Call<HandResult> sendJugada(@Field("idSession") String idSession,
+                                @Field("idGame") int idGame,
+                                @Field("idCard") String idCard,
+                                @Field("feature") String feature,
+                                @Field("hand") int hand);
 
     @POST("Autocartas/rest/init/ready")
     @FormUrlEncoded
-    Call<Jugada> sendReady(@Field("idSession") String idSession,
-                           @Field("idGame") int idGame,
-                           @Field("feature") Caracteristica caracteristica,
-                           @Field("hand") int hand);
-
-    @POST("Autocartas/rest/init/sendCheck")
-    @FormUrlEncoded
-    Call<Carta> sendCheck(@Field("idGame") int idGame,
-                          @Field("idSession") String idSession,
-                          @Field("idCartaJugador") String idCartaJugador,
-                          @Field("idCartaCPU") String idCartaCPU,
-                          @Field("feature") Caracteristica feature);
+    Call<CPUSelection> sendReady(@Field("idSession") String idSession,
+                                 @Field("idGame") int idGame);
 
     // - - - - - - - - - - - - GET, POST, PUT, DELETE de Cartas. - - - - - - - - - - - -
 
@@ -135,15 +126,13 @@ public interface APIService {
     @GET("Autocartas/rest/estadisticas/getstats")
     Call<List<Estadistica>> readEstadisticas();
 
-    // TODO FALTA METODO GET UNA ESTADISTICA
     @GET
     Call<Partida> readEstadistica();
 
 
     @POST("Autocartas/rest/estadisticas/create")
     @FormUrlEncoded
-    Call<Estadistica> sendEstadistica(@Field("id") int id,
-                                      @Field("jugador") String jugador,
+    Call<Estadistica> sendEstadistica(@Field("jugador") String jugador,
                                       @Field("partida") int partida,
                                       @Field("ganadas") int ganadas,
                                       @Field("perdidas") int perdidas,
