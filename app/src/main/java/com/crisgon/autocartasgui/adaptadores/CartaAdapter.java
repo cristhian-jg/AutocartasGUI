@@ -17,6 +17,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 /**
+ * Adaptador del RecyclerView de Cartas que define que se muestra en este.
+ *
  * Created by @cristhian-jg on 20/02/2020.
  */
 public class CartaAdapter extends RecyclerView.Adapter<CartaAdapter.CartaViewHolder> {
